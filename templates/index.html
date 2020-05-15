@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+               <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<title>GTS</title>
+</head>
+
+<body >
+
+<nav class="navbar navbar-expand-lg navbar-light"  style="background-color:#0773d1" style="height:80px">
+  <a class="navbar-brand"><img src="{% static 'logo.png' %}" height="50px" width="140px"/> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" style="color:#FFF" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:#FFF" href="#">How It Works?</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color:#FFF" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pricing
+        </a>
+        <div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" style="color:#FFF" href="#">Monthly</a>
+          <a class="dropdown-item" style="color:#FFF" href="#">Yearly</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" style="color:#FFF" href="#">Life time</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" style="color:#FFF" href="#">Register</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" style="color:#FFF" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+  
+  
+  
+
+<div class="jumbotron" style="background-color:#035aa6; color:#FFF" >
+  <img src="{% static 'header text.png' %}" />
+  <p class="lead">This is a simple, easy to use keyword scrapper, a complete solution for every affiliate marketer and dropshipper.</p>
+  <hr class="my-4">
+  <p>Get your money making keyword in NO TIME.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+<div class="container">
+  <div class="row">
+     <div class="col s4">
+                <!-- Promo Content 1 goes here -->
+                <div>
+                <center>
+                    <i class="material-icons" style="color:#ffd600; font-size:100px" >flash_on</i>
+                    <p>Fast Google Trend web scraper</p>
+                    <p class="light center">Scrape away right here with a beautiful GUI.</p>
+                </center>
+                </div>
+            </div>
+            <div class="col s4">
+                <!-- Promo Content 2 goes here -->
+                <div>
+                 <center>
+                    <i class="large material-icons" style="color: orange; font-size:100px"">camera</i>
+                    <p>Filter your searches</p>
+                    <p class="light center">We built in functionality to filter based on pricing.</p>
+                 </center>
+                </div>
+            </div>
+    
+            <div class="col s4">
+                <!-- Promo Content 3 goes here -->
+                <div>
+                 <center>
+                    <i class="large material-icons" style="color: blue; font-size:100px"">chrome_reader_mode</i>
+                    <p>A much sexier front-end to Google Trend</p>
+                    <p class="light center">We built this with ❤️</p>
+                     <center>
+                </div>
+           </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="card mb-3">
+  <img class="card-img-top" src="{% static 'excel intro.png' %}" >
+  
+</div>
+<br />
+<br />
+
+{% comment %} <button type="button" class="btn btn-primary btn-lg btn-block">Upload Excel Sheet</button>
+<br />
+<br /> {% endcomment %}
+<form action="{% url 'new_search' %}" method="post"enctype="multipart/form-data">
+{% csrf_token %}
+<label class="btn btn-primary btn-lg btn-block">
+    Upload Excel Sheet 
+    <input type="file"  name ="file" hidden>
+</label>
+<center>
+ <button class="btn waves-effect " type="submit" >Submit
+                <i class="material-icons right">send</i>
+</button>
+</center>
+</form>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
