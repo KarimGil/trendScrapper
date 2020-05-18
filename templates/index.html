@@ -57,7 +57,7 @@
   <img src="{% static 'header text.png' %}" />
   <p class="lead">This is a simple, easy to use keyword scrapper, a complete solution for every affiliate marketer and dropshipper.</p>
   <hr class="my-4">
-  <p>Get your money making keyword in NO TIME.</p>
+  <h5>Brand Bidding Made Easy</h5>
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
   </p>
@@ -115,13 +115,36 @@
     Upload Excel Sheet 
     <input type="file"  name ="file" hidden>
 </label>
+ <label for="sel1">Select Country:</label>
+<select class="form-control" id="sel1" name='country'>
+
+    <option>US</option>
+    <option>UK</option>
+    <option>CA</option>
+    
+  </select>
+  <label for="sel1">Select TimeFrame:</label>
+<select class="form-control" id="sel1" name='time'>
+
+    <option>now 4-H</option>
+    <option>now 1-H</option>
+    <option>now 1-d</option>
+    <option>now 7-d</option>
+    <option>today 1-m</option>
+    <option>today 2-m</option>
+    <option>today 3-m</option>
+
+    
+  </select>
 <center>
  <button class="btn waves-effect " type="submit" >Submit
                 <i class="material-icons right">send</i>
 </button>
 </center>
 </form>
+{% block content %}
 
+        {% endblock %}
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

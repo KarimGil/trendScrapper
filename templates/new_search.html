@@ -1,4 +1,4 @@
-
+{% extends 'index.html'%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,23 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+
 </head>
 <body>
-   
-    {% for post in final_postings  %}
-    <div class="card bg-dark text-white" style='height': auto;>
-  <img class="card-img" src="{{post}}" alt="Card image">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
+ {% block content %}
+ <div class="container">
+  <div class="row">
+    {% for post in  request.session.myimg %}
+   <div class="col">
+            <div class="card">
+                <div class="card-image">
+  <img class="card-img" src="/{{post}}" alt="Card image" style="height: 250px; width:300px">
   </div>
-</div>
+  </div>
+  </div>
     {% endfor %}
+</div>
+ </div>
 
- 
 
-
-    
+     {% endblock %}
 </body>
 </html>
