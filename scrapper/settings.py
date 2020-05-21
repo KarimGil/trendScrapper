@@ -27,7 +27,7 @@ SECRET_KEY = '+%qm7(^%pld$ndhv_n9g4ck&bp&1$qenna%_k06p297+syj+_2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://trendscrapper.herokuapp.com/']
+ALLOWED_HOSTS = ['trendscrapper.herokuapp.com']
 
 
 # Application definition
