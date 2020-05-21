@@ -15,7 +15,7 @@ def index(request):
 
 def new_search(request):
     request.session['myimg']= []
-    myimg = []
+    # myimg = []
    
     pytrend = TrendReq()
 
@@ -35,20 +35,20 @@ def new_search(request):
         time = request.POST['time']
         try:
             pytrend.build_payload(
-                kw_list=[i],
-                cat=0,
-                timeframe=time,
-                geo=country,
-                gprop='')
+                    kw_list=[i],
+                    cat=0,
+                    timeframe=time,
+                    geo=country,
+                    gprop='')
             data = pytrend.interest_over_time()
 
             data= data.drop(labels=['isPartial'],axis='columns')
             image = data.plot(title = i+' on Google Trends ')
-            
+                
             fig = image.get_figure()
             figure = fig.savefig('upload/data/'+i+'.png')
             request.session['myimg'].append('upload/data/'+i+'.png')
-            
+                
             graph = CourseVideos(graphImage=image)
             graph.save()
             final_postings.append(graph)
