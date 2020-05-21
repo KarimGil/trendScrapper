@@ -25,7 +25,7 @@ SECRET_KEY = '+%qm7(^%pld$ndhv_n9g4ck&bp&1$qenna%_k06p297+syj+_2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://trendscrapper.herokuapp.com/']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -123,5 +124,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'assets'),
     
 ]
+STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 MEDIA_URL = '/upload/'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
